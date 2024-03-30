@@ -16,7 +16,6 @@ def login(request):
         user = authenticate(request=request, username=username, password=password1)
         if user is not None:
             # the password verified for the user
-            print("User Logged In")
             auth_login(request,user)
             return redirect('home')
         else:
@@ -33,8 +32,17 @@ def register(request):
         email = request.POST.get('email')
         password1 = request.POST.get('password')
         password2 = request.POST.get('confirm-password')
-        my_user = User.objects.create_user(username,email,password1)
-        my_user.save()
-        return redirect('login')
+    
+        
+        if (len(password1)<6 or len(password2)>30):
+            return render(request, 'todotask/register.html' , {'pass_error' : 'Password should be between 6 and 30 characters' })
+        
+        elif password1 != password2:
+             return render(request, 'todotask/register.html' , {'pass_error' : 'Passwords do not match! Please try again.' })
+        else:
+            my_user = User.objects.create_user(username,email,password1)
+            my_user.save()
+            return redirect('login')
+            
         
     return render(request, 'todotask/register.html')

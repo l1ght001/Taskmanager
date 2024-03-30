@@ -22,7 +22,7 @@
   background-color: #fff;
   padding: 40px;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 form {
@@ -84,6 +84,10 @@ button:active {
         <label for="password">Password</label>
         <input type="password" id="password" name="password" required>
       </div>
+      {% if  error %}
+        <p style="color:red;">{{error}}</p>
+      {% endif %}
+      <br>
       <button type="submit">Login</button>
     </form>
   </div>
