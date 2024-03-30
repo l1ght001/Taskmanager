@@ -74,11 +74,12 @@ button:active {
 </head>
 <body>
   <div class="container">
-    <form action="#">
+    <form action="" method="POST">
+        {% csrf_token %}
       <h2>Sign Up</h2>
       <div class="input-group">
-        <label for="fullname">Full Name</label>
-        <input type="text" id="fullname" name="fullname" required>
+        <label for="fullname">Username</label>
+        <input type="text" id="fullname" name="username" required>
       </div>
       <div class="input-group">
         <label for="email">Email</label>

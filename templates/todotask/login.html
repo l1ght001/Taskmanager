@@ -73,7 +73,8 @@ button:active {
 </head>
 <body>
   <div class="container">
-    <form action="#">
+    <form action="" method="POST">
+      {% csrf_token %}
       <h2>Login</h2>
       <div class="input-group">
         <label for="username">Username</label>
