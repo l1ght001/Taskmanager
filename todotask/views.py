@@ -2,9 +2,10 @@ from django.shortcuts import render, HttpResponse , redirect
 from django.contrib.auth.models import User
 from django.contrib.auth  import authenticate, login as auth_login 
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth  import views  as auth_views
 # Create your views here.
 
-@login_required(login_url='login')
+@login_required(login_url=auth_views.LoginView.as_view(template_name='todotask/home.html'))
 def home(request):
     return render(request,'todotask/home.html')
 
