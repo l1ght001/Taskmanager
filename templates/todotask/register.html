@@ -88,6 +88,11 @@
   button:active {
     transform: translateY(1px);
   }
+  a{
+  text-decoration: none;
+  color: #0056b3;
+  font-weight: 500;
+}
   
   </style>
 </head>
@@ -116,6 +121,7 @@
       <p style="color:red;">{{pass_error}}</p>
       {% endif %}
       <button type="submit">Sign Up</button>
+      <p>Already Have an account ? <a href="{% url 'login' %}">Sign in</a></p>
     </form>
   </div>
 </body>

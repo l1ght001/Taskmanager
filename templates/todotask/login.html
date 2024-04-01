@@ -64,6 +64,9 @@ input[type="text"],
     font-size: 17px;
     text-align: start;
   }
+  ::placeholder:hover{
+    font-weight: bold;
+  }
 
   button {
     width: 50%;
@@ -78,6 +81,9 @@ input[type="text"],
     font-weight: 600;
     font-size: 16px;
   }
+  input:focus{
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  }
 
 button:hover {
   background-color: #0056b3;
@@ -85,6 +91,11 @@ button:hover {
 
 button:active {
   transform: translateY(1px);
+}
+a{
+  text-decoration: none;
+  color: #0056b3;
+  font-weight: 500;
 }
 
   </style>
